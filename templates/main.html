@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>House Price Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>HOUSE PRICE PREDICTION</h2>
+        <form action="/predict" method="post">
+            <label for="income"><b>Avg Area Income:</b></label>
+            <input type="text" id="income" name="income" required /><br />
+
+            <label for="house_age"><b>Avg Area House Age:</b></label>
+            <input type="text" id="house_age" name="house_age" required /><br />
+
+            <label for="rooms"><b>Avg Area Number of Rooms:</b></label>
+            <input type="text" id="rooms" name="rooms" required /><br />
+
+            <label for="bedrooms"><b>Avg Area Number of Bedrooms:</b></label>
+            <input type="text" id="bedrooms" name="bedrooms" required /><br />
+
+            <label for="population"><b>Area Population:</b></label>
+            <input type="text" id="population" name="population" required /><br />
+
+            <input type="submit" value="Predict" />
+        </form>
+    </div>
+</body>
+</html>
