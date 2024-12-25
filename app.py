@@ -1,8 +1,15 @@
-from flask import Flask, request, render_template # type: ignore
+from flask import Flask, request, render_template
 import joblib
 import numpy as np
+from dotenv import load_dotenv
+import os
+
+load_dotenv()  # Load environment variables from .env file
 
 app = Flask(__name__)
+
+# Set the Flask secret key from the environment variable
+app.config['SECRET_KEY'] = os.getenv('FLASK_SECRET_KEY')
 
 # Load Models and Scaler
 decision_tree = joblib.load('models/decision_tree_model.pkl')
